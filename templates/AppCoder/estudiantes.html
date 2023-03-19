@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block contenido_cambia %}
+    <form action="{% url 'AppCoderEstudiantes'  %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enviar datos de nueva información!">
+
+    </form>
+    {% if alumnos %}
+        {% for alumnos in alumnos %}
+            <p>nombre: {{ estudiantes.nombre }}</p>
+            <p>apellido: {{ estudiantes.apellido }}</p>
+            <p>telefono: {{ estudiantes.telefono }}</p>
+            <p>email: {{ estudiantes.email }}</p>
+            <p>direccion: {{ estudiantes.direccion }}</p>
+        {% endfor %}
+    {% else %}
+        <h1>No hay cursos en este momento</h1>
+    {% endif %}
+
+
+{% endblock %}

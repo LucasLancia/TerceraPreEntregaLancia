@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido_cambia %}
+    {% if cursos  %}
+        {% for curso in cursos %}
+            <hr>
+            <h6>Los resultados encontrados son:</h6>
+            <p>{{ curso }}</p>
+        {% endfor  %}
+    {% else %}
+        <h2>No hay ningun curso que concuerde con la busqueda. Intente nuevamente</h2>
+
+   {% endif %}
+{% endblock %}
