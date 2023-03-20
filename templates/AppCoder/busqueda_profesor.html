@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido_cambia %}
+    {% if profesor  %}
+        {% for profesor in profesores %}
+            <hr>
+            <h6>Los profesores encontrados son los siguientes:</h6>
+            <p>{{ profesor }}</p>
+        {% endfor  %}
+    {% else %}
+        <h2>No hay ningun profesor que concuerde con la busqueda. Intente nuevamente</h2>
+
+   {% endif %}
+{% endblock %}

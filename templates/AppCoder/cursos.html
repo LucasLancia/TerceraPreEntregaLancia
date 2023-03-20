@@ -3,7 +3,7 @@
 
 {% block contenido_cambia %}
     <br><hr>
-    <h5>Cargar nueva información sobre cursos:</h5>
+    <h5>Cargar nuevo curso:</h5>
     <form action="{% url 'AppCoderCursos'  %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}

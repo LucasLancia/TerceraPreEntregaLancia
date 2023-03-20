@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block contenido_cambia %}
+    <form action="{% url 'AppCoderProfesores'  %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enviar datos de nueva información!">
+
+    </form>
+    {% if profesores %}
+        {% for profesor in profesores %}
+            <p>nombre: {{ profesor.nombre }}</p>
+            <p>apellido: {{ profesor.apellido }}</p>
+            <p>telefono: {{ profesor.telefono }}</p>
+            <p>email: {{ profesor.email }}</p>
+            <p>profesion: {{ profesor.profesion }}</p>
+        {% endfor %}
+    {% else %}
+        <h1>No hay profesores en este momento!</h1>
+    {% endif %}
+
+
+{% endblock %}

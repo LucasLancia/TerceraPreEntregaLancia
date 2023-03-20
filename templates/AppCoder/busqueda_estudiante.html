@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block contenido_cambia %}
+    {% if estudiante  %}
+        {% for estudiante in estudiantes %}
+            <hr>
+            <h6>Los estudiantes encontrados son los siguientes:</h6>
+            <p>{{ estudiante }}</p>
+        {% endfor  %}
+    {% else %}
+        <h2>No hay ningun estudiante que concuerde con la busqueda. Intente nuevamente</h2>
+
+   {% endif %}
+{% endblock %}
