@@ -117,22 +117,22 @@ def busqueda_profesor(request):
     return render(request, "AppCoder/busqueda_profesor.html", context=context)
 
 def crear_estudiante(request, nombre,apellido,email):
-    save_curso = Curso(nombre=nombre,apellido=apellido,email=email)
-    save_curso.save()
+    save_estudiante = Estudiante(nombre=nombre,apellido=apellido,email=email)
+    save_estudiante.save()
     context = {
         "nombre": nombre,
         "apellido":apellido,
         "email":email
     }
-    return render(request, "AppCoder/save_curso.html", context)
+    return render(request, "AppCoder/save_estudiante.html", context)
 
 def crear_profesor(request, nombre,apellido,email,profesion):
-    save_curso = Curso(nombre=nombre,apellido=apellido,email=email,profesion=profesion)
-    save_curso.save()
+    save_profesor = Profesor(nombre=nombre,apellido=apellido,email=email,profesion=profesion)
+    save_profesor.save()
     context = {
         "nombre": nombre,
         "apellido":apellido,
         "email":email,
         "profesion":profesion
     }
-    return render(request, "AppCoder/save_curso.html", context)
+    return render(request, "AppCoder/save_profesor.html", context)
