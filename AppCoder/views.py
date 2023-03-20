@@ -55,7 +55,7 @@ def estudiantes(request):
             estudiante_save = Curso(
                 nombre=informacion['nombre'],
                 apellido=informacion['apellido'],
-                telefono=informacion['telefono'],
+                ##telefono=informacion['telefono'],
                 email=informacion['email']
 
             )
@@ -79,7 +79,7 @@ def profesores(request):
             profesor_save = Profesor(
                 nombre=informacion['nombre'],
                 apellido=informacion['apellido'],
-                telefono=informacion['telefono'],
+                ##telefono=informacion['telefono'],
                 email=informacion['email'],
                 profesion=informacion['profesion']
 
@@ -116,24 +116,22 @@ def busqueda_profesor(request):
         }
     return render(request, "AppCoder/busqueda_profesor.html", context=context)
 
-def crear_estudiante(request, nombre,apellido,telefono,email):
-    save_curso = Curso(nombre=nombre,apellido=apellido,telefono=telefono,email=email)
+def crear_estudiante(request, nombre,apellido,email):
+    save_curso = Curso(nombre=nombre,apellido=apellido,email=email)
     save_curso.save()
     context = {
         "nombre": nombre,
         "apellido":apellido,
-        "telefono":telefono,
         "email":email
     }
     return render(request, "AppCoder/save_curso.html", context)
 
-def crear_profesor(request, nombre,apellido,telefono,email,profesion):
-    save_curso = Curso(nombre=nombre,apellido=apellido,telefono=telefono,email=email,profesion=profesion)
+def crear_profesor(request, nombre,apellido,email,profesion):
+    save_curso = Curso(nombre=nombre,apellido=apellido,email=email,profesion=profesion)
     save_curso.save()
     context = {
         "nombre": nombre,
         "apellido":apellido,
-        "telefono":telefono,
         "email":email,
         "profesion":profesion
     }
